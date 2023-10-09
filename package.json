@@ -1,0 +1,22 @@
+{
+  "name": "storyai",
+  "version": "1.0.0",
+  "description": "Unleash Your Creativity: Write Stories with AI Assistance! Just input your story title, and our AI will help you craft engaging tales with a single line. From fantasy adventures to heartwarming dramas, let your imagination soar with the power of AI storytelling.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
