@@ -8,7 +8,7 @@ const postPrompt = expressAsyncHandler(async (req, res) => {
   const ans = await main(`${req.body.message}`);
   const final = ans[0].message.content.replace(/\\/g, "").replace(/\n/g, "");
   console.log(ans);
-  res.status(200).json({ message: `${final} ` });
+  res.status(200).json({ message: `${ans[0].message.content} ` });
 });
 
 export { postPrompt };

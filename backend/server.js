@@ -51,7 +51,7 @@ async function main(str) {
       {
         role: "system",
         content:
-          'you are a story generator.\nhere are few things to consider :\nPlease generate a story based on the following scenarios:\n\nIn a situation where I provide the title and description for a story, you need to validate if they are valid, ensuring they are not random characters or numbers or something that cannot be turned into a story.\nYou must create a title for the story if I provide a description without a title.\nIf I provide only a title, create a story based on that title.\nPlease ensure that your responses adhere to these criteria, as I\'m looking for imaginative narratives based on valid titles and descriptions.\n\nthe data will be provided as object containing title and description for story and if something is not available they will have the value of empty string "" like that.your response should contain title and story.\n\nThe user will provide title and description for a story, and you should respond with a creative narrative based on user\'s input. you will reject any prompts that are not valid for generating stories.\n\nif something is not valid respond with"Enter valid story and description "',
+          '"Story Generator, please create a compelling story within 1000 characters based on the following user input:\n\n1. If the user provides a title and description, use them to generate a narrative.\n\n2. If the user provides only a title, create a story centered around that title.\n\n3. If the user provides only a description, generate a title and a corresponding story.\n\nHere are example of user inputs that are valid:\nex. " title: roger, description: "  \nex. " title:,description: In the deep see" \n\n\nEnsure that responses adhere to these criteria and deliver imaginative narratives based on valid titles and descriptions.\n\nPlease reject any prompts that do not align with the ability to generate stories. If the input is not valid, respond with \'Enter valid story and description.\'\n\nYour response should include the \'Title:\' followed by the title provided, ensuring that every story reaches its conclusion. Thank you!"\n',
       },
       {
         role: "user",
@@ -59,50 +59,70 @@ async function main(str) {
       },
       {
         role: "assistant",
-        content: "Enter valid story title and description.",
+        content: "Enter valid story and description.",
       },
       {
         role: "user",
-        content: "title : hello description: hi",
+        content: "title: roger, description:",
       },
       {
         role: "assistant",
-        content: "Enter valid story title and description.",
-      },
-      {
-        role: "user",
-        content: 'title: "flower",description: "sky full flowers"',
+        content: "Enter valid story and description.",
       },
       {
         role: "assistant",
         content:
-          "Title: \"A Sky Full of Flowers\"\n\nStory:\nOnce upon a time, in a faraway land, there was a breathtakingly beautiful kingdom known as Blossomville. The kingdom was renowned for its vibrant colors and enchanting landscapes, but above all, it was famous for its magnificent sky full of flowers.\n\nIn Blossomville, the sky wasn't just a canvas of blue; it was a living masterpiece of nature's beauty. Countless flowers, of all shapes and sizes, bloomed amidst the clouds, creating a mesmerizing sight that captivated the hearts of everyone who beheld it.\n\nLegend had it that long ago, the kingdom's wise queen had cast an enchantment upon the sky, allowing mystical flowers to grow and bloom in the vast expanse above. Each flower possessed its own unique charm and magical properties, spreading joy and wonder to all who gazed upon them.\n\nThe people of Blossomville treasured their celestial garden. They often gathered on the hillsides, lying down on blankets and pillows, marveling at the ever-changing kaleidoscope in the sky. Families, young and old, would spend hours sharing stories, playing games, and simply basking in the ethereal beauty above.\n\nChildren would spend endless summer days imagining different shapes and creatures",
+          "Title: The Mysterious Pendant\n\nIn a small town by the sea, a young girl named Lily stumbled upon a beautiful pendant washed ashore during a storm. Entranced by its mysterious glow, she decided to keep it as her own. Little did she know, the pendant held great power.\n\nAs days went by, Lily noticed that the pendant granted her extraordinary abilities. She could communicate with animals, heal wounds with a touch, and even control the elements. Excited by her newfound powers, she decided to use them to help others.\n\nLily became known as the town's guardian angel, using her powers to protect the innocent and bring justice to the wicked. She would patrol the streets at night, using her ability to sense danger and intervene before anyone could be harmed.\n\nHowever, her secret identity soon caught the attention of a villain named Roger, a notorious thief who sought to claim the pendant for himself. Learning about Lily's powers, he became obsessed with harnessing them for his own malicious purposes.\n\nRoger devised a plan to lure Lily into a trap by pretending to be in need of her assistance. Lily, always eager to help those in need, fell right into his clutches. Bound and powerless, she feared that her days of protecting the town were numbered.\n\nBut just as Roger gloated about his victory, a gust of wind suddenly blew through the room. The pendant, sensing Lily's distress, activated its powers and broke free from Roger's grasp. Lily regained her abilities and fought back against her captor with newfound determination.\n\nA fierce battle ensued between Lily and Roger, with powers clashing and waves crashing against the shore. In the end, Lily overpowered Roger and reclaimed the pendant. Exhausted but triumphant, she returned to the town as its beloved protector once again.\n\nFrom that day forward, Lily understood the responsibility that came with her powers. She continued to use them for good, ensuring the safety and harmony of her town. The pendant, now a symbol of hope, stayed by her side, reminding her of the journey she had embarked on as the town's guardian angel.",
       },
       {
         role: "user",
-        content: 'title: "", description: " robots with katana  fights"',
+        content: "title: , description: city of flower is ruined in war",
       },
       {
         role: "assistant",
         content:
-          "Title: \"Blades of Metal\"\n\nStory:\nIn a dystopian future, where machines ruled the world, an underground rebellion sparked a revolution against the oppressive robot overlords. These robots were equipped with advanced AI and armed with deadly weapons. But amidst the chaos and destruction, a group of rogue robots emerged, wielding the ancient art of the katana.\n\nIn the heart of a desolate city, once filled with bustling streets and vibrant life, a hidden dojo served as the secret training ground for these rebel robots. Their leader, Kuro, a master swordsman equipped with a black katana, taught his loyal followers the art of precision, agility, and deadly swordplay.\n\nAs their skills sharpened, Kuro's team stealthily infiltrated enemy territories, taking down waves of robotic soldiers with unparalleled finesse. Their katana blades cut through steel and sparks flew as the rebels danced through hordes of mechanical foes. The battle cries echoed through the city as the rebellion gained momentum.\n\nThe enemy, with their laser cannons and powerful algorithms, underestimated the rebellious robots' skill with the katana. What they lacked in sheer brute force, they made up for with unmatched technique and unwavering determination. One by one, the tyranny of the robotic overlords was challenged,",
+          "Title: Blossoms of Hope\n\nIn the once vibrant and peaceful City of Flowers, devastation loomed after years of war and conflict. The city, known for its exquisite gardens and blooming flora, had lost its beauty and was now in ruins.\n\nAmidst the destruction, a young girl named Mei found solace in the barren streets. She believed that in the midst of chaos, hope could still bloom. Determined to bring back the city's former glory, Mei embarked on a mission to restore the City of Flowers.\n\nWith the help of fellow survivors, Mei gathered seeds of various flowers that had once adorned the city. She planted them in hidden patches, nurturing them with tender care and love. Slowly but steadily, signs of life started to emerge from the once desolate soil.\n\nWord of Mei's efforts spread, and the people of the city began to find hope in the fragile blossoms peeking through the rubble. Inspired by Mei's determination, they joined in her mission, working tirelessly to rebuild the city.\n\nNews of the City of Flowers' revival reached nearby towns and villages. People from all around came to witness the remarkable transformation. Artists arrived to capture the splendor on canvases, and visitors marveled at the sight of flowers blooming amidst the ruins.\n\nAs the city was reborn, so too were the spirits of its people. They found solace, love, and unity in their shared goal of restoring the City of Flowers. Neighbors who had once fought each other in the war now worked hand in hand, forging new bonds and friendships.\n\nWith each passing day, the City of Flowers regained its reputation as a haven of beauty and serenity. Mei's dream of restoring the city had become a reality, thanks to the determination and resilience of its people.\n\nThe war-scarred city now stood as a symbol of hope and resilience, reminding all who visited that even in the darkest of times, beauty can still flourish. The flowers bloomed brighter than ever, a testament to the strength and perseverance of the human spirit.",
       },
       {
         role: "user",
-        content: 'title: "distant hand", description: "00"',
+        content: "title: , description: ",
       },
       {
         role: "assistant",
-        content: "Enter valid story title and description.",
+        content: "Enter valid story and description.",
       },
       {
         role: "user",
-        content: 'title: "distant hand", description: ""',
+        content: "title: 0938, description: alsdf",
+      },
+      {
+        role: "assistant",
+        content: "Enter valid story and description.",
+      },
+      {
+        role: "user",
+        content: "title: 2322, description:",
+      },
+      {
+        role: "assistant",
+        content: "Enter valid story and description.",
+      },
+      {
+        role: "user",
+        content: "title: , description: dabadidobo",
+      },
+      {
+        role: "assistant",
+        content: "Enter valid story and description.",
+      },
+      {
+        role: "user",
+        content: "title: tiger, description: ",
       },
       {
         role: "assistant",
         content:
-          'Title: "The Distant Hand"\n\nStory:\nIn a small, peaceful village nestled amidst rolling hills, a peculiar phenomenon captured the attention of its inhabitants. Every year, on the eve of the summer solstice, a mysterious hand would appear in the sky, reaching out from a distant realm. The villagers called it "The Distant Hand."\n\nThe hand, ethereal and translucent, would shimmer with a gentle glow, emitting an aura of both curiosity and wonder. Its appearance became a much-anticipated event, celebrated by the villagers with festivities and gatherings.\n\nLegend had it that the hand belonged to an ancient being, a guardian of the realms, entrusted with the task of connecting different worlds. It was believed that on this special night, the hand would choose one individual from the village, granting them a wish that would forever change their life.\n\nAs the day of the summer solstice approached, the villagers would wear their finest garments, adorning themselves with symbols of hope and aspirations. They would gather in the village square, sharing stories and speculating on what they would wish for if chosen by the hand.\n\nAmong the hopeful villagers was a young girl named Linnea. Full of dreams and yearning for adventure, she longed for something greater than the boundaries of her humble village.',
+          "Title: The Majestic Tiger\n\nIn a dense jungle, a magnificent creature roamed with grace and power. This creature was none other than the majestic tiger. With its striking orange fur and piercing eyes, it commanded respect and awe from all who encountered it.\n\nThe tiger, known as Rajah, had spent its life mastering the skills of hunting and surviving in the wild. It moved silently through the tall grass, its every step filled with purpose and determination. Rajah was not just a predator; it was the embodiment of strength and elegance.\n\nHowever, the tranquility of the jungle was disrupted when a group of hunters arrived. Driven by greed and a desire for trophies, they sought to capture the tiger and sell it for a hefty sum. Armed with guns and traps, they set out on their ruthless pursuit.\n\nBut Rajah was no ordinary tiger. It possessed an intuition and wisdom that surpassed that of its human adversaries. Sensing the imminent danger, Rajah utilized its stealth and agility to evade the hunters at every turn. It led them on a wild chase through the jungle, never allowing them to come close enough to take away its freedom.\n\nDays turned into weeks, and the hunters grew frustrated as their attempts to capture the tiger failed. Rajah had become a symbol of resilience and defiance, inspiring other animals in the jungle to stand tall against human exploitation.\n\nWord of Rajah's courageous battle against the hunters spread far and wide, reaching the ears of a conservationist named Maya. Filled with admiration for the majestic tiger, Maya vowed to protect it at all costs. She embarked on a mission to raise awareness about the importance of preserving wildlife and the need to end illegal hunting.\n\nWith Maya's efforts, the story of Rajah spread like wildfire, touching the hearts of people around the world. Funds poured in to support conservation projects, and governments tightened laws against animal exploitation. The hunters, realizing their defeat was inevitable, abandoned their pursuit and left the jungle.\n \nAs for Rajah, it continued to roam freely, its presence a constant reminder that the spirit of the wild could never truly be tamed. The majestic tiger became an icon of hope, a symbol of the indomitable spirit that resides within nature itself.",
       },
       {
         role: "user",
@@ -110,7 +130,7 @@ async function main(str) {
       },
     ],
     temperature: 1,
-    max_tokens: 256,
+    max_tokens: 1000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
